@@ -12,7 +12,7 @@ import SwiftUI
 struct Drink_HandyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(menus: Menu.sampleData, addaction: {})
         }
     }
 }
