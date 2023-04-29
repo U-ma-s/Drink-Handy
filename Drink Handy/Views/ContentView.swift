@@ -11,36 +11,26 @@ import SwiftUI
 struct ContentView: View {
     var menus: [Menu]
     let addaction: () -> Void
+    @State private var selection: Tab = .list
+    enum Tab {
+        case card
+        case list
+    }
     
     var body: some View {
-        NavigationStack {
-            List(menus) { menu in
-                NavigationLink(destination: DetailView(menu: menu)) {
-                    HStack {
-                        if menu.isAlcoholic {
-                                Text("酒")
-                                .font(.title)
-                                .foregroundColor(.orange)
-                        } else {
-                            Text("無")
-                            .font(.title)
-                            .foregroundColor(.cyan)
-                        }
-                        Spacer()
-                        Text(menu.name)
-                        Spacer()
-                    }
+        TabView(selection: $selection) {
+            MenuListView(menus: menus, addaction: {})
+                .tabItem {
+                    Label("List" , systemImage: "list.bullet")
                 }
-                .navigationTitle("Menus")
-            }
-            .toolbar {
-                Button(action: {}) {
-                    Image(systemName: "plus")
+                .tag(Tab.list)
+            Text("card")
+                .tabItem {
+                    Label("card", systemImage: "square")
                 }
-
-            }
+                .tag(Tab.card)
+            
         }
-        
     }
 }
 

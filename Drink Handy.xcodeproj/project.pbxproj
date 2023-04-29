@@ -13,6 +13,7 @@
 		AA0FB11129FC11090046A220 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0FB11029FC11090046A220 /* Preview Assets.xcassets */; };
 		AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB11A29FC129C0046A220 /* Menu.swift */; };
 		AA0FB11D29FC1EAB0046A220 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB11C29FC1EAB0046A220 /* DetailView.swift */; };
+		AA0FB11F29FD56850046A220 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB11E29FD56850046A220 /* MenuListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AA0FB11029FC11090046A220 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA0FB11A29FC129C0046A220 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		AA0FB11C29FC1EAB0046A220 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AA0FB11E29FD56850046A220 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				AA0FB10B29FC11070046A220 /* ContentView.swift */,
 				AA0FB11C29FC1EAB0046A220 /* DetailView.swift */,
+				AA0FB11E29FD56850046A220 /* MenuListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */,
+				AA0FB11F29FD56850046A220 /* MenuListView.swift in Sources */,
 				AA0FB11D29FC1EAB0046A220 /* DetailView.swift in Sources */,
 				AA0FB10C29FC11070046A220 /* ContentView.swift in Sources */,
 				AA0FB10A29FC11070046A220 /* Drink_HandyApp.swift in Sources */,
