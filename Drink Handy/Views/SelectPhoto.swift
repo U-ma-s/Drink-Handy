@@ -12,7 +12,7 @@ import PhotosUI
 struct SelectPhoto: View {
     @State var photoPickerItems: [PhotosPickerItem] = []
     @State var images: [UIImage] = []
-    @Binding var menuPhoto: UIImage?
+    @Binding var menu: Menu
     
     var body: some View {
         VStack {
@@ -38,6 +38,7 @@ struct SelectPhoto: View {
                                             images.append(uiImage)
 //                                            //test-->
 //                                            menuPhoto = images[0]
+                                            menu.photo = uiImage
 //                                            //<--
                                         }
                                     }
@@ -48,23 +49,9 @@ struct SelectPhoto: View {
                         }
                     }
             } else {
-//                TabView {//後で消す
-//                    ForEach(images, id: \.self) { image in
-//                        Image(uiImage: image)
-//                            .resizable()
-//                            .scaledToFit()
-//                    }
-//                }
-//                .tabViewStyle(.page(indexDisplayMode: .always))
-                
                 Image(uiImage: images[0])
                     .resizable()
                     .scaledToFit()
-//                //test-->
-//                Image(uiImage: menuPhoto!)
-//                    .resizable()
-//                    .scaledToFit()
-//                //<--
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -74,6 +61,6 @@ struct SelectPhoto: View {
 
 struct SelectPhoto_Previews: PreviewProvider {
     static var previews: some View {
-        SelectPhoto(menuPhoto: .constant(Menu.sampleData[0].photo))
+        SelectPhoto(menu: .constant(Menu.sampleData[0]))
     }
 }

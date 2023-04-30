@@ -19,7 +19,22 @@ struct DetailView: View {
             VStack(alignment: .leading) {
                 Text("完成図")
                     .font(.headline)
-                Image("kasiore")
+                if menu.photo != nil{
+                    Image(uiImage: menu.photo!)
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    //Image("kasiore")
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.gray)
+                        .overlay {
+                            Text("完成品の写真を表示可能")
+                                .bold()
+                        }
+                }
+                //Image("kasiore")
                 Divider()
                 Text("作り方")
                     .font(.headline)
