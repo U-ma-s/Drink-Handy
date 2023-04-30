@@ -36,7 +36,6 @@ struct MenuListView: View {
                 Button(action: {}) {
                     Image(systemName: "plus")
                 }
-
             }
         }    }
 }
