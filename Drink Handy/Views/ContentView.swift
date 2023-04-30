@@ -9,27 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    var menus: [Menu]
+    @State var menus: [Menu]
     let addaction: () -> Void
-    @State private var selection: Tab = .list
-    enum Tab {
-        case card
-        case list
-    }
+    
+    @State var isPresentingNewMenuView = false
     
     var body: some View {
-        TabView(selection: $selection) {
-            MenuListView(menus: menus, addaction: {})
-                .tabItem {
-                    Label("List" , systemImage: "list.bullet")
+        NavigationStack {
+            List($menus) { $menu in
+                NavigationLink(destination: DetailView(menu: $menu)) {
+                    MenuRow(menu: $menu)
                 }
-                .tag(Tab.list)
-            Text("card")
-                .tabItem {
-                    Label("card", systemImage: "square")
+                .navigationTitle("Menus")
+            }
+            .toolbar {
+                Button(action: {
+                    isPresentingNewMenuView = true
+                }) {
+                    Image(systemName: "plus")
                 }
-                .tag(Tab.card)
-            
+            }
+            .sheet(isPresented: $isPresentingNewMenuView) {
+                NewMenuSheet(menu: $menus, isPresentingNewScrumView: $isPresentingNewMenuView)
+            }
         }
     }
 }

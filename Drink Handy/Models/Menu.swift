@@ -22,6 +22,13 @@ struct Menu: Identifiable {
     }
 }
 
+//MARK: - New Menu
+extension Menu {
+    static var emptyMenu: Menu {
+        Menu(name: "", isAlcoholic: true, recipe: "")
+    }
+}
+
 //MARK: - Sample Data
 extension Menu {
     static let sampleData:[Menu] = [
