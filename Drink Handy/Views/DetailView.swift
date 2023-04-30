@@ -7,24 +7,22 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct DetailView: View {
     var menu: Menu
     
     var body: some View {
         
-        VStack {
-            Section{
-                Text("作り方")
-                    .font(.headline)
-                Text(menu.recipe)
-                    .multilineTextAlignment(.leading)
-            }
-            Section {
-                Text("完成形")
-                    .font(.headline)
-                Text("ここに画像が入る")
-            }
+        VStack(alignment: .leading) {
+            Text("完成図")
+                .font(.headline)
+            Image("kasiore")
+            Divider()
+            Text("作り方")
+                .font(.headline)
+            Text(menu.recipe)
+            Spacer()
         }
         .padding()
     }
