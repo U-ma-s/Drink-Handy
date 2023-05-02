@@ -10,6 +10,8 @@ import SwiftUI
 
 @main
 struct Drink_HandyApp: App {
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView(menus: Menu.sampleData, addaction: {})

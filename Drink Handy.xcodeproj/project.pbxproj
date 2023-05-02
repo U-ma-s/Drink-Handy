@@ -18,6 +18,10 @@
 		AA0FB12529FE16B60046A220 /* NewMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12429FE16B60046A220 /* NewMenuSheet.swift */; };
 		AA0FB12729FE21500046A220 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12629FE21500046A220 /* MenuRow.swift */; };
 		AA0FB12929FE2D270046A220 /* SelectPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12829FE2D270046A220 /* SelectPhoto.swift */; };
+		AA0FB12F29FE88880046A220 /* Drink Handy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12D29FE88880046A220 /* Drink Handy.xcdatamodeld */; };
+		AA0FB13229FE8DB10046A220 /* DrinkMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */; };
+		AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */; };
+		AA0FB1A72A00AA420046A220 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB1A62A00AA420046A220 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		AA0FB12429FE16B60046A220 /* NewMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuSheet.swift; sourceTree = "<group>"; };
 		AA0FB12629FE21500046A220 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
 		AA0FB12829FE2D270046A220 /* SelectPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhoto.swift; sourceTree = "<group>"; };
+		AA0FB12E29FE88880046A220 /* DrinkMenu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkMenu.xcdatamodel; sourceTree = "<group>"; };
+		AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AA0FB1A62A00AA420046A220 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +73,14 @@
 		AA0FB10829FC11070046A220 /* Drink Handy */ = {
 			isa = PBXGroup;
 			children = (
+				AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */,
+				AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */,
 				AA0FB11929FC11C00046A220 /* Views */,
 				AA0FB11829FC11950046A220 /* Models */,
 				AA0FB10929FC11070046A220 /* Drink_HandyApp.swift */,
 				AA0FB10D29FC11090046A220 /* Assets.xcassets */,
 				AA0FB10F29FC11090046A220 /* Preview Content */,
+				AA0FB12D29FE88880046A220 /* Drink Handy.xcdatamodeld */,
 			);
 			path = "Drink Handy";
 			sourceTree = "<group>";
@@ -87,6 +98,7 @@
 			children = (
 				AA0FB11A29FC129C0046A220 /* Menu.swift */,
 				AA0FB12029FDFDCC0046A220 /* Photo.swift */,
+				AA0FB1A62A00AA420046A220 /* PersistenceController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,12 +187,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0FB12129FDFDCC0046A220 /* Photo.swift in Sources */,
+				AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */,
 				AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */,
 				AA0FB12729FE21500046A220 /* MenuRow.swift in Sources */,
+				AA0FB13229FE8DB10046A220 /* DrinkMenu+CoreDataClass.swift in Sources */,
 				AA0FB12929FE2D270046A220 /* SelectPhoto.swift in Sources */,
 				AA0FB11D29FC1EAB0046A220 /* DetailView.swift in Sources */,
+				AA0FB12F29FE88880046A220 /* Drink Handy.xcdatamodeld in Sources */,
 				AA0FB12329FE0F650046A220 /* EditView.swift in Sources */,
 				AA0FB12529FE16B60046A220 /* NewMenuSheet.swift in Sources */,
+				AA0FB1A72A00AA420046A220 /* PersistenceController.swift in Sources */,
 				AA0FB10C29FC11070046A220 /* ContentView.swift in Sources */,
 				AA0FB10A29FC11070046A220 /* Drink_HandyApp.swift in Sources */,
 			);
@@ -381,6 +397,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA0FB12D29FE88880046A220 /* Drink Handy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA0FB12E29FE88880046A220 /* DrinkMenu.xcdatamodel */,
+			);
+			currentVersion = AA0FB12E29FE88880046A220 /* DrinkMenu.xcdatamodel */;
+			path = "Drink Handy.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA0FB0FE29FC11070046A220 /* Project object */;
 }
