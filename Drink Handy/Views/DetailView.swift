@@ -17,6 +17,12 @@ struct DetailView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
+                Text("作り方")
+                    .font(.headline)
+                    .padding(.bottom)
+                Text(menu.recipe)
+
+                Divider()
                 Text("完成図")
                     .font(.headline)
                 if menu.photo != nil{
@@ -34,11 +40,7 @@ struct DetailView: View {
                                 .bold()
                         }
                 }
-                //Image("kasiore")
                 Divider()
-                Text("作り方")
-                    .font(.headline)
-                Text(menu.recipe)
                 Spacer()
             }
             .padding()

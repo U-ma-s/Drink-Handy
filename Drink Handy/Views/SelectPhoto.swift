@@ -24,10 +24,26 @@ struct SelectPhoto: View {
                     matching: .images, // 写真の種類を画像(images)だけに
                     preferredItemEncoding: .current,
                     photoLibrary: .shared()) {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .frame(width: 130, height: 100)
-                            .foregroundColor(.gray)
+                        VStack {
+//                            Image(uiImage: menu.photo ?? UIImage(systemName: "photo")!)
+//                                .resizable()
+//                                .frame(width: 130, height: 100)
+//                                .foregroundColor(.gray)//反映されない
+//                            Text((menu.photo != nil) ? "写真を変更する" : "完成イメージを追加する")
+                            // ver.2
+                            if let safePhoto = menu.photo{
+                                Image(uiImage: safePhoto)
+                                    .resizable()
+                                    .frame(width: 130, height: 100)
+                                Text("写真を変更する")
+                            } else {
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .frame(width: 130, height: 100)
+                                    .foregroundColor(.gray)
+                                Text("完成イメージを追加する")
+                            }
+                        }
                     }
                     .onChange(of: photoPickerItems) { newPhotoPickerItems in
                         Task {
@@ -36,10 +52,7 @@ struct SelectPhoto: View {
                                     if let data = try await photoPickerItem.loadTransferable(type: Data.self) {
                                         if let uiImage = UIImage(data: data) {
                                             images.append(uiImage)
-//                                            //test-->
-//                                            menuPhoto = images[0]
                                             menu.photo = uiImage
-//                                            //<--
                                         }
                                     }
                                 }
