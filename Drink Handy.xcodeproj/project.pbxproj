@@ -22,6 +22,7 @@
 		AA0FB13229FE8DB10046A220 /* DrinkMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */; };
 		AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */; };
 		AA0FB1A72A00AA420046A220 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB1A62A00AA420046A220 /* PersistenceController.swift */; };
+		AA0FB1A92A0141410046A220 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB1A82A0141410046A220 /* MenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AA0FB1A62A00AA420046A220 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AA0FB1A82A0141410046A220 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				AA0FB11A29FC129C0046A220 /* Menu.swift */,
 				AA0FB12029FDFDCC0046A220 /* Photo.swift */,
 				AA0FB1A62A00AA420046A220 /* PersistenceController.swift */,
+				AA0FB1A82A0141410046A220 /* MenuModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				AA0FB12F29FE88880046A220 /* Drink Handy.xcdatamodeld in Sources */,
 				AA0FB12329FE0F650046A220 /* EditView.swift in Sources */,
 				AA0FB12529FE16B60046A220 /* NewMenuSheet.swift in Sources */,
+				AA0FB1A92A0141410046A220 /* MenuModel.swift in Sources */,
 				AA0FB1A72A00AA420046A220 /* PersistenceController.swift in Sources */,
 				AA0FB10C29FC11070046A220 /* ContentView.swift in Sources */,
 				AA0FB10A29FC11070046A220 /* Drink_HandyApp.swift in Sources */,

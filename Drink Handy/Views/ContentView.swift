@@ -9,6 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @StateObject private var menuModel = MenuModel()
+//
+//    @FetchRequest(entity: DrinkMenu.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \DrinkMenu.name, ascending: false)], animation: .default)
+//    private var menus: FetchedResults<DrinkMenu>
+    
     @State var menus: [Menu]
     let addaction: () -> Void
     
