@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct MenuRow: View {
-    @Binding var menu: Menu
+    //@Binding var menu: Menu
+    @Binding var menu: DrinkMenu
     
     var body: some View {
         HStack {

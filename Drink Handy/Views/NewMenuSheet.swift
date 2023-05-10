@@ -11,7 +11,7 @@ import SwiftUI
 struct NewMenuSheet: View {
     @State var newMenu = Menu.emptyMenu
     @Binding var menu: [Menu]
-    @Binding var isPresentingNewScrumView: Bool
+    @Binding var isPresentingNewMenuView: Bool
     
     var body: some View {
         NavigationStack {
@@ -19,13 +19,13 @@ struct NewMenuSheet: View {
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel"){
-                            isPresentingNewScrumView = false
+                            isPresentingNewMenuView = false
                         }
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
                             menu.append(newMenu)
-                            isPresentingNewScrumView = false
+                            isPresentingNewMenuView = false
                         }
                     }
                 }
@@ -35,6 +35,6 @@ struct NewMenuSheet: View {
 
 struct NewMenuSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewMenuSheet(newMenu: Menu.emptyMenu, menu: .constant(Menu.sampleData), isPresentingNewScrumView: .constant(true))
+        NewMenuSheet(newMenu: Menu.emptyMenu, menu: .constant(Menu.sampleData), isPresentingNewMenuView: .constant(true))
     }
 }
