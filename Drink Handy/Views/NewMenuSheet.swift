@@ -9,32 +9,63 @@
 import SwiftUI
 
 struct NewMenuSheet: View {
-    @State var newMenu = Menu.emptyMenu
-    @Binding var menu: [Menu]
-    @Binding var isPresentingNewScrumView: Bool
+    @Binding var isPresentiongNewMenuView: Bool
+    
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss//NavigationStackからこのviewをポップ
+    
+    @State private var isAlcoholic = true
+    @State private var name = ""
+    @State private var photoData = Data.init(capacity: 0)
+    @State private var recipe = ""
     
     var body: some View {
-        NavigationStack {
-            EditView(menu: $newMenu)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel"){
-                            isPresentingNewScrumView = false
-                        }
-                    }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Add") {
-                            menu.append(newMenu)
-                            isPresentingNewScrumView = false
-                        }
+        NavigationStack{
+            Form {
+                Section {
+                    TextField("メニュー名", text: $name)
+                    Toggle("アルコール", isOn: $isAlcoholic)//プルダウンとかの方がわかりやすいかな？
+                } header: {
+                    Text("メニュー情報")
+                }
+                Section {
+                    TextField("作り方", text: $recipe, axis: .vertical)
+                } header: {
+                    Text("作り方")
+                }
+                
+                Section {
+                    //Image("kasiore")
+                    //SelectPhoto(photoData: $photoData)
+                } header: {
+                    Text("完成イメージ")
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        let newMenu = DrinkMenu(context: moc)
+                        newMenu.id = UUID()
+                        newMenu.isAlcoholic = isAlcoholic
+                        newMenu.name = name
+                        newMenu.recipe = recipe
+
+                        try? moc.save()
+                        //dismiss()
+                        isPresentiongNewMenuView = false
+                    } label: {
+                        Text("Save")
                     }
                 }
-        }
-    }
-}
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        isPresentiongNewMenuView = false
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
 
-struct NewMenuSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        NewMenuSheet(newMenu: Menu.emptyMenu, menu: .constant(Menu.sampleData), isPresentingNewScrumView: .constant(true))
+            }
+        }
     }
 }

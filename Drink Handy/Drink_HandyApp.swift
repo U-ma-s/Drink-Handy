@@ -14,7 +14,9 @@ struct Drink_HandyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(menus: Menu.sampleData, addaction: {})
+            //ContentView(menus: Menu.sampleData, addaction: {})
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

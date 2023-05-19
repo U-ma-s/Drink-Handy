@@ -13,6 +13,7 @@ struct SelectPhoto: View {
     @State var photoPickerItems: [PhotosPickerItem] = []
     @State var images: [UIImage] = []
     @Binding var menu: Menu
+    //@Binding var photoData: Data
     
     var body: some View {
         VStack {
@@ -25,12 +26,6 @@ struct SelectPhoto: View {
                     preferredItemEncoding: .current,
                     photoLibrary: .shared()) {
                         VStack {
-//                            Image(uiImage: menu.photo ?? UIImage(systemName: "photo")!)
-//                                .resizable()
-//                                .frame(width: 130, height: 100)
-//                                .foregroundColor(.gray)//反映されない
-//                            Text((menu.photo != nil) ? "写真を変更する" : "完成イメージを追加する")
-                            // ver.2
                             if let safePhoto = menu.photo{
                                 Image(uiImage: safePhoto)
                                     .resizable()

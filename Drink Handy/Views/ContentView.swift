@@ -7,37 +7,50 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
-    @State var menus: [Menu]
-    let addaction: () -> Void
-    
     @State var isPresentingNewMenuView = false
     
+    @StateObject private var menuViewModel = MenuViewModel()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.name)
+    ]) var drinkmenus: FetchedResults<DrinkMenu>
+    
     var body: some View {
-        NavigationStack {
-            List($menus) { $menu in
-                NavigationLink(destination: DetailView(menu: $menu)) {
-                    MenuRow(menu: $menu)
+        NavigationStack{
+            List{
+                ForEach(drinkmenus) { drinkmenu in
+                    NavigationLink(destination: DetailView(menuViewModel: menuViewModel, drinkmenu: drinkmenu)) {
+                        MenuRow(menuViewModel: menuViewModel, menu: drinkmenu)
+                    }
                 }
-                .navigationTitle("Menus")
+                .onDelete(perform: deleteMenu)
             }
             .toolbar {
-                Button(action: {
-                    isPresentingNewMenuView = true
-                }) {
-                    Image(systemName: "plus")
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button(action: {
+                        isPresentingNewMenuView = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
                 }
             }
             .sheet(isPresented: $isPresentingNewMenuView) {
-                NewMenuSheet(menu: $menus, isPresentingNewScrumView: $isPresentingNewMenuView)
+                NewMenuSheet(isPresentiongNewMenuView: $isPresentingNewMenuView)
             }
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(menus: Menu.sampleData, addaction: {})
+    
+    func deleteMenu(at offsets: IndexSet) {
+        for offset in offsets {
+            let drinkmenu = drinkmenus[offset]
+            moc.delete(drinkmenu)
+        }
+        try? moc.save()
     }
 }
