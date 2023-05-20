@@ -41,7 +41,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $isPresentingNewMenuView) {
-                NewMenuSheet(isPresentiongNewMenuView: $isPresentingNewMenuView)
+                NewMenuSheet(isPresentiongNewMenuView: $isPresentingNewMenuView, menuViewModel: menuViewModel)
             }
         }
     }

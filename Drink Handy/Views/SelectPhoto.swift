@@ -10,9 +10,13 @@ import SwiftUI
 import PhotosUI
 
 struct SelectPhoto: View {
-    @State var photoPickerItems: [PhotosPickerItem] = []
-    @State var images: [UIImage] = []
-    @Binding var menu: Menu
+//    @State var photoPickerItems: [PhotosPickerItem] = []
+//    @State var images: [UIImage] = []
+    @Binding var photoPickerItems: [PhotosPickerItem]
+    @Binding var images: [UIImage]
+    @Binding var imageData: [Data]
+    
+    //@Binding var menu: Menu
     //@Binding var photoData: Data
     
     var body: some View {
@@ -26,18 +30,10 @@ struct SelectPhoto: View {
                     preferredItemEncoding: .current,
                     photoLibrary: .shared()) {
                         VStack {
-                            if let safePhoto = menu.photo{
-                                Image(uiImage: safePhoto)
-                                    .resizable()
-                                    .frame(width: 130, height: 100)
-                                Text("写真を変更する")
-                            } else {
-                                Image(systemName: "photo")
-                                    .resizable()
-                                    .frame(width: 130, height: 100)
-                                    .foregroundColor(.gray)
-                                Text("完成イメージを追加する")
-                            }
+                            Image(systemName: "photo")
+                                .resizable()
+                                .frame(width: 130, height: 100)
+                                .foregroundColor(.gray)
                         }
                     }
                     .onChange(of: photoPickerItems) { newPhotoPickerItems in
@@ -47,7 +43,8 @@ struct SelectPhoto: View {
                                     if let data = try await photoPickerItem.loadTransferable(type: Data.self) {
                                         if let uiImage = UIImage(data: data) {
                                             images.append(uiImage)
-                                            menu.photo = uiImage
+                                            imageData.append(data)
+                                            //menu.photo = uiImage
                                         }
                                     }
                                 }
@@ -67,8 +64,8 @@ struct SelectPhoto: View {
     }
 }
 
-struct SelectPhoto_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectPhoto(menu: .constant(Menu.sampleData[0]))
-    }
-}
+//struct SelectPhoto_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectPhoto(menu: .constant(Menu.sampleData[0]))
+//    }
+//}

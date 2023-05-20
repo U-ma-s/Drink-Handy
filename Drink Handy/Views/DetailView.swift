@@ -29,59 +29,13 @@ struct DetailView: View {
                 Divider()
                 Text("完成図")
                     .font(.headline)
-//                if menu.photo != nil{
-//                    Image(uiImage: menu.photo!)
-//                if drinkmenu.photo != nil{
-//                    Image(uiImage: drinkmenu.photo!)
-//                        .resizable()
-//                        .scaledToFit()
-//                } else {
-//                    //Image("kasiore")
-//                    Image(systemName: "photo")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .foregroundColor(.gray)
-//                        .overlay {
-//                            Text("完成品の写真を表示可能")
-//                                .bold()
-//                        }
-//                }
+                Image(uiImage: ((UIImage(data: drinkmenu.wrappedphotoData) ?? UIImage(systemName: "photo")) ?? UIImage(systemName: "photo"))!)
+                    .resizable()
+                    .scaledToFit()
                 Divider()
                 Spacer()
             }
             .padding()
-//            .toolbar {
-//                Button("Edit") {
-//                    editingMenu = menu
-//                    isPresentingEditView = true
-//                }
-//            }
-//            .sheet(isPresented: $isPresentingEditView) {
-//                NavigationStack{
-//                    EditView(menu: $editingMenu)
-//                        .navigationTitle(menu.name)
-//                        .toolbar {
-//                            ToolbarItem(placement: .cancellationAction) {
-//                                Button("Cancel") {
-//                                    isPresentingEditView = false
-//                                }
-//                            }
-//                            ToolbarItem(placement: .confirmationAction) {
-//                                Button("Done") {
-//                                    isPresentingEditView = false
-//                                    menu = editingMenu
-//                                }
-//                            }
-//                        }
-//
-//                }
-//            }
         }
     }
-    
-//    struct DetailView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            DetailView(menu: .constant(Menu.sampleData[0]))
-//        }
-//    }
 }
