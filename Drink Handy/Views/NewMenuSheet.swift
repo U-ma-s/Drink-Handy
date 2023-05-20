@@ -18,10 +18,7 @@ struct NewMenuSheet: View {
 
     
     @ObservedObject var menuViewModel: MenuViewModel
-    //@Stateで選択後の写真が格納される配列をこっちからSelectPhotoに渡す。それをmenuViewModel.photoDataに格納する？
-    @State private var images: [UIImage] = []
     @State private var imageData: [Data] = []
-    @State private var photoPickerItems: [PhotosPickerItem] = []
     
     var body: some View {
         NavigationStack{
@@ -37,9 +34,8 @@ struct NewMenuSheet: View {
                 } header: {
                     Text("作り方")
                 }
-                
                 Section {
-                    SelectPhoto(photoPickerItems: $photoPickerItems, images: $images, imageData: $imageData)
+                    SelectPhoto(imageData: $imageData)
                 } header: {
                     Text("完成イメージ")
                 }
