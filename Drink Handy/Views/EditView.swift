@@ -27,7 +27,7 @@ struct EditView: View {
             
             Section {
                 //Image("kasiore")
-                SelectPhoto(menu: $menu)
+                //SelectPhoto(menu: $menu)
             } header: {
                 Text("完成イメージ")
             }

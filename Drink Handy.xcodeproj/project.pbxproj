@@ -22,6 +22,7 @@
 		AA0FB13229FE8DB10046A220 /* DrinkMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */; };
 		AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */; };
 		AA0FB1A72A00AA420046A220 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB1A62A00AA420046A220 /* PersistenceController.swift */; };
+		AA0FB2142A10D5450046A220 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB2132A10D5450046A220 /* MenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		AA0FB13029FE8DB00046A220 /* DrinkMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AA0FB13129FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkMenu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AA0FB1A62A00AA420046A220 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AA0FB2132A10D5450046A220 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				AA0FB11A29FC129C0046A220 /* Menu.swift */,
 				AA0FB12029FDFDCC0046A220 /* Photo.swift */,
 				AA0FB1A62A00AA420046A220 /* PersistenceController.swift */,
+				AA0FB2132A10D5450046A220 /* MenuViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0FB12129FDFDCC0046A220 /* Photo.swift in Sources */,
+				AA0FB2142A10D5450046A220 /* MenuViewModel.swift in Sources */,
 				AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */,
 				AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */,
 				AA0FB12729FE21500046A220 /* MenuRow.swift in Sources */,
