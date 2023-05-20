@@ -10,14 +10,11 @@ import SwiftUI
 import PhotosUI
 
 struct SelectPhoto: View {
-//    @State var photoPickerItems: [PhotosPickerItem] = []
-//    @State var images: [UIImage] = []
-    @Binding var photoPickerItems: [PhotosPickerItem]
-    @Binding var images: [UIImage]
+    @State var photoPickerItems: [PhotosPickerItem] = []
+    @State var images: [UIImage] = []
+
     @Binding var imageData: [Data]
     
-    //@Binding var menu: Menu
-    //@Binding var photoData: Data
     
     var body: some View {
         VStack {
@@ -44,7 +41,6 @@ struct SelectPhoto: View {
                                         if let uiImage = UIImage(data: data) {
                                             images.append(uiImage)
                                             imageData.append(data)
-                                            //menu.photo = uiImage
                                         }
                                     }
                                 }
@@ -63,9 +59,3 @@ struct SelectPhoto: View {
         //.background(.black)
     }
 }
-
-//struct SelectPhoto_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SelectPhoto(menu: .constant(Menu.sampleData[0]))
-//    }
-//}
