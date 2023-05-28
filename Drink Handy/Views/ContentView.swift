@@ -39,14 +39,6 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        print("tapped")
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                    }
-
-                }
             }
             .sheet(isPresented: $isPresentingNewMenuView) {
                 NewMenuSheet(isPresentiongNewMenuView: $isPresentingNewMenuView, menuViewModel: menuViewModel)
