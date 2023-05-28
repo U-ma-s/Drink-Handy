@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Drink Handy
-//  
-//  Created by umas on 2023/04/28
-//  
-//
 
 import SwiftUI
 import CoreData

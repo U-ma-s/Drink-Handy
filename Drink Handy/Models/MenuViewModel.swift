@@ -35,7 +35,7 @@ class MenuViewModel: ObservableObject {
             
             isAlcoholic = true
             name = ""
-            photoData = Data.init()
+            //photoData = Data.init()////これあるとEditViewでphotoDataがnilになる
             recipe = ""
             
             return

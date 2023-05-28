@@ -1,44 +1,60 @@
-//
-//  EditView.swift
-//  Drink Handy
-//  
-//  Created by umas on 2023/04/30
-//  
-//
 
 import SwiftUI
 
+
 struct EditView: View {
     
-    @Binding var menu: Menu
+    @Binding var isPresentiongEditView: Bool
+    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var menuViewModel: MenuViewModel
+    @Binding var currentImage: Data
+    
     var body: some View {
-        Form {
-            Section {
-                TextField("メニュー名", text: $menu.name)
-                Toggle("アルコール", isOn: $menu.isAlcoholic)//プルダウンとかの方がわかりやすいかな？
-            } header: {
-                Text("メニュー情報")
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("メニュー名", text: $menuViewModel.name)
+                    Toggle("アルコール", isOn: $menuViewModel.isAlcoholic)
+                } header: {
+                    Text("メニュー情報")
+                }
+                Section {
+                    TextField("作り方", text: $menuViewModel.recipe, axis: .vertical)
+                } header: {
+                    Text("作り方")
+                }
+            
+                Section {
+                    SelectPhoto(imageData: $currentImage)
+                } header: {
+                    Text("完成イメージ")
+                }
             }
-            Section {
-                TextField("作り方", text: $menu.recipe, axis: .vertical)
-            } header: {
-                Text("作り方")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        menuViewModel.writeData(moc: moc)
+                        isPresentiongEditView = false
+                    } label: {
+                        Text("Save")
+                    }
+                    .disabled(menuViewModel.name == "")///"name"が空欄のときはsaveボタン無効化
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        /// 値の初期化
+                        menuViewModel.name = ""
+                        menuViewModel.isAlcoholic = true
+                        menuViewModel.recipe = ""
+                        //menuViewModel.photoData = Data.init(capacity: 0)
+                        /// モーダルの解除
+                        isPresentiongEditView = false
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
             }
             
-            Section {
-                //Image("kasiore")
-                //SelectPhoto(menu: $menu)
-            } header: {
-                Text("完成イメージ")
-            }
-
-
         }
-    }
-}
-
-struct EditView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditView(menu: .constant(Menu.sampleData[0]))
     }
 }

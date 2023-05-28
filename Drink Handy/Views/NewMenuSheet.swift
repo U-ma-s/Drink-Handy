@@ -1,33 +1,20 @@
-//
-//  NewMenuSheet.swift
-//  Drink Handy
-//  
-//  Created by umas on 2023/04/30
-//  
-//
-
 import SwiftUI
-import PhotosUI
 
 struct NewMenuSheet: View {
     @Binding var isPresentiongNewMenuView: Bool
-    
     @Environment(\.managedObjectContext) var moc
-    @Environment(\.dismiss) var dismiss//NavigationStackからこのviewをポップ
-    
-
     
     @ObservedObject var menuViewModel: MenuViewModel
-    @State private var imageData: [Data] = []
+    @State private var imageData: Data = Data.init()
     
     var body: some View {
         NavigationStack{
             Form {
                 Section {
-                    TextField("メニュー名", text: $menuViewModel.name)
-                    Toggle("アルコール", isOn: $menuViewModel.isAlcoholic)//プルダウンにする？
+                    TextField("メニュー名(必須)", text: $menuViewModel.name)
+                    Toggle("アルコール", isOn: $menuViewModel.isAlcoholic)
                 } header: {
-                    Text("メニュー情報")
+                    Text("基本情報")
                 }
                 Section {
                     TextField("作り方", text: $menuViewModel.recipe, axis: .vertical)
@@ -37,19 +24,21 @@ struct NewMenuSheet: View {
                 Section {
                     SelectPhoto(imageData: $imageData)
                 } header: {
-                    Text("完成イメージ")
+                    Text("完成イメージ（必須）")
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        menuViewModel.photoData = imageData[0]//選択画像を反映
+                        menuViewModel.photoData = imageData
                         menuViewModel.writeData(moc: moc)
                         
                         isPresentiongNewMenuView = false
                     } label: {
                         Text("Save")
                     }
+                    .disabled(menuViewModel.name == "")
+                    .disabled(imageData.count == 0)
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -58,7 +47,7 @@ struct NewMenuSheet: View {
                         menuViewModel.isAlcoholic = true
                         menuViewModel.recipe = ""
                         menuViewModel.photoData = Data.init(capacity: 0)
-                        /// modelの解除
+                        /// モーダルの解除
                         isPresentiongNewMenuView = false
                     } label: {
                         Text("Cancel")
