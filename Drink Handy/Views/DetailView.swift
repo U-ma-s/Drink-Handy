@@ -13,7 +13,7 @@ struct DetailView: View {
             NavigationStack {
                 VStack(alignment: .leading) {
                     if drinkmenu.isAlcoholic {
-                        Text("アルコールを含みます")
+                        Text("アルコール")
                             .font(.largeTitle)
                             .foregroundColor(.red)
                             .padding(3)
@@ -23,16 +23,17 @@ struct DetailView: View {
                             .foregroundColor(.cyan)
                             .padding(3)
                     }
+                    Divider()
                     Text("作り方")
                         .font(.headline)
                         .padding(.bottom)
                     
                     Text(drinkmenu.wrappedRecipe)
+                        .font(.body)
                     
                     Divider()
                     Text("完成図")
                         .font(.headline)
-                    //Image(uiImage: ((UIImage(data: drinkmenu.wrappedphotoData) ?? UIImage(systemName: "photo")))!)
                     Image(uiImage: UIImage(data: drinkmenu.wrappedphotoData)!)
                         .resizable()
                         .scaledToFit()
@@ -54,6 +55,7 @@ struct DetailView: View {
                     EditView(isPresentiongEditView: $isPresentingEditView, menuViewModel: menuViewModel, currentImage: $menuViewModel.photoData)
                 }
             }.navigationTitle(drinkmenu.wrappedname)
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

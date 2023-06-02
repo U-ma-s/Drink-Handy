@@ -4,7 +4,6 @@ import CoreData
 
 struct ContentView: View {
     @State var isPresentingNewMenuView = false
-    
     @StateObject private var menuViewModel = MenuViewModel()
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
@@ -16,6 +15,12 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack{
+            if drinkmenus.isEmpty {
+                VStack(alignment: .center) {
+                    Spacer()
+                    Text("表示可能なメニューが存在しません")
+                }
+            }
             List{
                 ForEach(drinkmenus) { drinkmenu in
                     NavigationLink(destination: DetailView(menuViewModel: menuViewModel, drinkmenu: drinkmenu)) {
@@ -24,7 +29,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteMenu)
             }
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "名前で検索")
+            .searchable(text: $searchText, placement: .automatic, prompt: "名前で検索")
             .onChange(of: searchText) { newValue in
                 search(text: newValue)
             }

@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA0CBDE62A22F0EB00B08498 /* EditPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CBDE52A22F0EB00B08498 /* EditPhoto.swift */; };
 		AA0FB10A29FC11070046A220 /* Drink_HandyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB10929FC11070046A220 /* Drink_HandyApp.swift */; };
 		AA0FB10C29FC11070046A220 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB10B29FC11070046A220 /* ContentView.swift */; };
 		AA0FB10E29FC11090046A220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0FB10D29FC11090046A220 /* Assets.xcassets */; };
 		AA0FB11129FC11090046A220 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0FB11029FC11090046A220 /* Preview Assets.xcassets */; };
-		AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB11A29FC129C0046A220 /* Menu.swift */; };
 		AA0FB11D29FC1EAB0046A220 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB11C29FC1EAB0046A220 /* DetailView.swift */; };
-		AA0FB12129FDFDCC0046A220 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12029FDFDCC0046A220 /* Photo.swift */; };
 		AA0FB12329FE0F650046A220 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12229FE0F650046A220 /* EditView.swift */; };
 		AA0FB12529FE16B60046A220 /* NewMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12429FE16B60046A220 /* NewMenuSheet.swift */; };
 		AA0FB12729FE21500046A220 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FB12629FE21500046A220 /* MenuRow.swift */; };
@@ -27,15 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA0CBDE52A22F0EB00B08498 /* EditPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoto.swift; sourceTree = "<group>"; };
 		AA0FB10629FC11070046A220 /* Drink Handy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drink Handy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0FB10929FC11070046A220 /* Drink_HandyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink_HandyApp.swift; sourceTree = "<group>"; };
 		AA0FB10B29FC11070046A220 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0FB10D29FC11090046A220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0FB11029FC11090046A220 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AA0FB11A29FC129C0046A220 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		AA0FB11C29FC1EAB0046A220 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		AA0FB12029FDFDCC0046A220 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AA0FB12229FE0F650046A220 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		AA0FB12429FE16B60046A220 /* NewMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuSheet.swift; sourceTree = "<group>"; };
 		AA0FB12629FE21500046A220 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
@@ -100,8 +94,6 @@
 		AA0FB11829FC11950046A220 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AA0FB11A29FC129C0046A220 /* Menu.swift */,
-				AA0FB12029FDFDCC0046A220 /* Photo.swift */,
 				AA0FB1A62A00AA420046A220 /* PersistenceController.swift */,
 				AA0FB2132A10D5450046A220 /* MenuViewModel.swift */,
 			);
@@ -117,7 +109,6 @@
 				AA0FB12429FE16B60046A220 /* NewMenuSheet.swift */,
 				AA0FB12629FE21500046A220 /* MenuRow.swift */,
 				AA0FB12829FE2D270046A220 /* SelectPhoto.swift */,
-				AA0CBDE52A22F0EB00B08498 /* EditPhoto.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,11 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0FB12129FDFDCC0046A220 /* Photo.swift in Sources */,
-				AA0CBDE62A22F0EB00B08498 /* EditPhoto.swift in Sources */,
 				AA0FB2142A10D5450046A220 /* MenuViewModel.swift in Sources */,
 				AA0FB13329FE8DB10046A220 /* DrinkMenu+CoreDataProperties.swift in Sources */,
-				AA0FB11B29FC129C0046A220 /* Menu.swift in Sources */,
 				AA0FB12729FE21500046A220 /* MenuRow.swift in Sources */,
 				AA0FB13229FE8DB10046A220 /* DrinkMenu+CoreDataClass.swift in Sources */,
 				AA0FB12929FE2D270046A220 /* SelectPhoto.swift in Sources */,
@@ -338,11 +326,14 @@
 				DEVELOPMENT_TEAM = 2YYAU5734D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,9 +341,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umas.Drink-Handy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,11 +361,14 @@
 				DEVELOPMENT_TEAM = 2YYAU5734D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,9 +376,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umas.Drink-Handy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
